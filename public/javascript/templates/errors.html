@@ -1,0 +1,16 @@
+<div class="bg-warning" style="clear:both">
+    <ul class="list">
+        <li ng-repeat="(key, errors) in elementScope.$error track by $index">
+            <span ng-show="errors || (elementScope.$error.required)" class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
+            <span ng-hide="errors || (elementScope.$error.required)" class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+            <ng-switch on="key">
+                <span ng-switch-when="required">Field is required.</span>
+                <span ng-switch-when="minlength">Minimum length is {{minLength}} characters.</span>
+                <span ng-switch-when="ng-min">Minimum value is {{ng-min}}.</span>
+                <span ng-switch-when="number">Must be number.</span>
+                <span ng-switch-when="same">Different value than {{elemDifferent}}.</span>
+                <span ng-switch-default>Input is invalid {{key}}.</span>
+            </ng-switch>
+        </li>
+    </ul>
+</div>

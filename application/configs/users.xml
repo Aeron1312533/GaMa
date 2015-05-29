@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+        <username>jozef</username>
+        <password>jozefoveheslo</password>
+        <role>manager</role>
+    </user>
+    <user>
+        <username>katka</username>
+        <password>katkineheslo</password>
+        <role>guest</role>
+    </user>
+    <user>
+        <username>tulka</username>
+        <password>nijako1</password>
+        <role>manager</role>
+    </user>
+    <user>
+        <username>tulko</username>
+        <password>parada1</password>
+        <role>guest</role>
+    </user>
+</users>

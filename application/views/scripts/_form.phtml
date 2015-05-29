@@ -1,0 +1,39 @@
+<form action="<?php print $this->escape($this->element->getAction()); ?>"
+  method="<?php print $this->escape($this->element->getMethod()); ?>"
+  name="<?php print $this->escape($this->element->getName()); ?>"
+  id="<?php print $this->escape($this->element->getId()); ?>"
+  class="<?php print $this->escape($this->element->getAttrib('class')); ?>"
+  ng-submit="login()">
+    <fieldset>
+      <legend><?php echo $this->element->getDisplayGroup('logindata')->getLegend(); ?></legend>
+        <div class="form-group row">
+          <label class="control-label col-lg-2" for="username">
+            <?php print $this->element->username->getLabel(); ?>
+          </label>
+            <?php echo $this->{$this->element->username->helper}(
+                $this->element->username->getName(),
+                $this->element->username->getValue(),
+                $this->element->username->getAttribs()
+            ) ?>
+            <formelementerrors element-id='username' element-scope="form_login.username"></formelementerrors>
+        </div>
+        <div class="form-group row">
+          <label class="control-label col-lg-2" for="password">
+            <?php print $this->element->password->getLabel() ?>
+          </label>
+            <?php echo $this->{$this->element->password->helper}(
+                $this->element->password->getName(),
+                $this->element->password->getValue(),
+                $this->element->password->getAttribs()
+            ) ?>
+            <formelementerrors element-id='password' element-scope="form_login.password"></formelementerrors>
+        </div>
+        <div class="form-actions row">
+          <?php echo $this->{$this->element->signin->helper}(
+                $this->element->signin->getName(),
+                $this->element->signin->getValue(),
+                $this->element->signin->getAttribs()
+            ) ?>
+        </div>
+      </fieldset>
+  </form>

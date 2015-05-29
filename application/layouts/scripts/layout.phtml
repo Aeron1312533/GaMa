@@ -1,0 +1,45 @@
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Gaming Management');
+echo $this->doctype(); ?>
+<html>
+<head>
+   <?php echo $this->headMeta(); ?>
+    <?php echo $this->headTitle(); ?>
+    <?php echo $this->headStyle(); ?>
+    <?php echo $this->headScript()->prependFile($this->baseUrl("/bower_components/jquery/dist/jquery.min.js"))
+                                  ->appendFile($this->baseUrl("/bower_components/bootstrap/dist/js/bootstrap.min.js"))
+                                  ->appendFile($this->baseUrl("/bower_components/angular/angular.min.js"))
+                                  ->appendFile($this->baseUrl("/bower_components/angular-animate/angular-animate.min.js"))
+                                  ->appendFile($this->baseUrl('/javascript/app.js'))
+                                  ->appendFile($this->baseUrl('/javascript/thirdparty/smartTable.js'))
+                                  ->appendFile($this->baseUrl('/javascript/thirdparty/IrInfiniteScrollPlugin.js'))
+                                  ->appendFile($this->baseUrl("/bower_components/angular-inform/dist/angular-inform.min.js")); ?>
+    <?php echo $this->headLink()->prependStylesheet($this->baseUrl("/bower_components/bootstrap/dist/css/bootstrap.min.css"))
+                                ->appendStylesheet($this->baseUrl('/css/gm.css'))
+                                ->appendStylesheet($this->baseUrl('/bower_components/angular-inform/dist/angular-inform.min.css'));  ?>
+</head>
+<body>
+<div id="wrapper" class="container" data-ng-app="gm">
+    <div inform class="inform-fixed"></div>
+    <div id="page" class="col-md-10 col-lg-offset-1">
+        <div id="header" class="row">
+            <?php echo $this->render('_header.phtml') ?>
+            <?php
+if (count($this->messages)) : ?>
+<?php foreach ($this->messages as $message) : ?>
+    <div class="alert alert-<?php echo $message->getType(); ?>"><?php echo $this->escape($message->getMessage()); ?></div>
+<?php endforeach; ?>
+<?php endif; ?>
+        </div>
+        <div id="main" class="row">
+            <?php echo $this->layout()->content; ?>
+        </div>
+        <div id="footer" class="row">
+            <?php echo $this->render('_footer.phtml') ?>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+.st-sort-ascent:before{
+    content: '\25B2';
+}
+
+.st-sort-descent:before{
+    content: '\25BC';
+}
+
+th {
+    cursor: pointer;
+}
+
+div#header {
+    background: white;
+    margin-bottom: 40px;
+}
+div#wrapper {
+    background: white;
+}
+
+div#main {
+    font-size: 12px;
+}
+

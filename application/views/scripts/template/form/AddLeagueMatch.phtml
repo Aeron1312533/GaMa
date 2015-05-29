@@ -1,0 +1,129 @@
+<form action="<?php print $this->escape($this->element->getAction()); ?>"
+  method="<?php print $this->escape($this->element->getMethod()); ?>"
+  name="<?php print $this->escape($this->element->getName()); ?>"
+  id="<?php print $this->escape($this->element->getId()); ?>"
+  class="<?php print $this->escape($this->element->getAttrib('class')); ?>"
+  ng-submit="add(addleaguematchform, $event)">
+    <fieldset>
+        <legend><h4><?php echo $this->element->getDisplayGroup('addleaguematchdata')->getLegend(); ?></h4></legend>
+        <div class="form-group">
+            <div class="col-sm-2">  
+              <label class="control-label" for="player1">
+                <?php print $this->element->player1->getLabel(); ?>
+              </label>
+            </div>
+          <div class="col-sm-4">  
+            <?php echo $this->{$this->element->player1->helper}(
+                $this->element->player1->getName(),
+                $this->element->player1->getValue(),
+                $this->element->player1->getAttribs(),
+                $this->element->player1->getMultiOptions()
+            ) ?>
+          </div>
+          <div class="col-sm-6">
+            <formelementerrors element-id='player1' element-scope="form_add_league_match.player1"></formelementerrors>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2">  
+              <label class="control-label" for="player1score">
+                <?php print $this->element->player1score->getLabel(); ?>
+              </label>
+          </div>
+          <div class="col-sm-3">
+            <?php echo $this->{$this->element->player1score->helper}(
+                $this->element->player1score->getName(),
+                $this->element->player1score->getValue(),
+                $this->element->player1score->getAttribs()
+            ) ?>
+          </div>
+          <div class="col-sm-5 col-sm-offset-1"> 
+            <formelementerrors element-id='player1score' element-scope="form_add_league_match.player1score"></formelementerrors>
+          </div>
+        </div>
+      <div class="row">
+          <div class="col-sm-6">
+            <img class="center-block" src="<?php echo $this->baseUrl('/images/vs.png') ?>" alt="VS" style="width:50px; height:50px; margin-bottom: 30px;">
+          </div>
+      </div>
+        <div class="form-group">
+            <div class="col-sm-2">  
+              <label class="control-label" for="player2">
+                <?php print $this->element->player2->getLabel(); ?>
+              </label>
+            </div>
+          <div class="col-sm-4">  
+            <?php echo $this->{$this->element->player2->helper}(
+                $this->element->player2->getName(),
+                $this->element->player2->getValue(),
+                $this->element->player2->getAttribs(),
+                $this->element->player2->getMultiOptions()
+            ) ?>
+          </div>
+          <div class="col-sm-6"> 
+            <formelementerrors element-id='player2' element-scope="form_add_league_match.player2"></formelementerrors>
+          </div>
+        </div>
+      <div class="form-group">
+          <div class="col-sm-2">  
+              <label class="control-label" for="player2score">
+                <?php print $this->element->player2score->getLabel(); ?>
+              </label>
+          </div>
+          <div class="col-sm-3">
+            <?php echo $this->{$this->element->player2score->helper}(
+                $this->element->player2score->getName(),
+                $this->element->player2score->getValue(),
+                $this->element->player2score->getAttribs()
+            ) ?>
+          </div>
+          <div class="col-sm-5 col-sm-offset-1"> 
+            <formelementerrors element-id='player2score' element-scope="form_add_league_match.player2score"></formelementerrors>
+          </div>
+        </div>
+      <div class="form-group">
+          <div class="col-sm-3">  
+              <label class="control-label" for="note">
+                <?php print $this->element->note->getLabel(); ?>
+              </label>
+          </div>
+          <div class="col-sm-2">
+            <?php echo $this->{$this->element->note->helper}(
+                $this->element->note->getName(),
+                $this->element->note->getValue(),
+                $this->element->note->getAttribs()
+            ) ?>
+          </div>
+        </div>
+      <div class="form-group">
+          <div class="col-sm-3">  
+              <label class="control-label" for="isfriendly">
+                <?php print $this->element->isfriendly->getLabel(); ?>
+              </label>
+          </div>
+          <div class="col-sm-2">
+            <?php echo $this->{$this->element->isfriendly->helper}(
+                $this->element->isfriendly->getName(),
+                $this->element->isfriendly->getValue(),
+                $this->element->isfriendly->getAttribs()
+            ) ?>
+          </div>
+        </div>
+        <div class="form-actions row">
+            <div class="col-sm-2 col-sm-offset-1">  
+                <?php echo $this->{$this->element->addleaguematch->helper}(
+                    $this->element->addleaguematch->getName(),
+                    $this->element->addleaguematch->getValue(),
+                    $this->element->addleaguematch->getAttribs()
+                ) ?>
+            </div>
+            <div class="col-sm-2">  
+                <?php echo $this->{$this->element->resetleaguematch->helper}(
+                    $this->element->resetleaguematch->getName(),
+                    $this->element->resetleaguematch->getValue(),
+                    $this->element->resetleaguematch->getAttribs()
+                ) ?>
+            </div>
+        </div>
+      </fieldset>
+  </form>

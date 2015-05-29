@@ -1,0 +1,62 @@
+<div data-ng-controller="leagueController" data-ng-init="init()" class="col-sm-6">
+    <h4>League table</h4>
+    <table data-ng-hide="tableLoading" st-table="displayedCollection" st-safe-src="rowsLeagueTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th st-sort="nickname">Nickname</th>
+                <th st-sort="matches">Matches</th>
+                <th st-sort="wins">Wins</th>
+	      	<th st-sort="loses">Loses</th>
+	      	<th st-sort="score">Score</th>
+                <th st-sort="points" st-sort-default="reverse">Points</th>
+      	</tr>
+    	</thead>
+    	<tbody>
+      	<tr ng-repeat="row in displayedCollection">
+      		<td>{{row.nickname}}</td>
+        	<td>{{row.matches}}</td>
+      		<td>{{row.wins}}</td>
+    	  	<td>{{row.loses}}</td>
+      		<td>{{row.score}}</td>
+                <td>{{row.points}}</td>
+       	</tr>
+	    </tbody>
+    </table>
+    <br />
+    <br />
+    <span data-ng-show="tableLoading">Loading...</span>
+    <h4>League Matches</h4>
+    <table data-ng-hide="matchesLoading" st-table="displayedCollection2" st-safe-src="rowsMatches" class="table table-striped">
+        <thead>
+            <tr>
+		<th>
+			<input st-search="who_match" placeholder="search for nickname" class="input-sm form-control" type="search"/>
+		</th>
+            </tr>
+            <tr>
+                <th st-sort="id_match" st-sort-default="reverse" style="display: none;">Id Match</th>
+                <th>Date</th>
+                <th>Match</th>
+                <th>Result</th>
+            </tr>
+    	</thead>
+    	<tbody>
+            <tr ng-repeat="row in displayedCollection2">
+                <td style="display: none;">{{row.id_match}}</td>
+                <td>{{row.date_created}}</td>
+        	<td>{{row.who_match}}</td>
+      		<td>{{row.match_result}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="10" st-displayed-pages="10"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <span data-ng-show="matchesLoading">Loading...</span>
+</div>
+</div>
+<script src="<?php echo $this->baseUrl('/javascript/controllers/LeagueController.js')?>"></script>

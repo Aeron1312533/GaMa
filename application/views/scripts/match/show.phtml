@@ -1,0 +1,25 @@
+<div class="row">
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#addLeagueMatchTabContent" aria-controls="addLeagueMatchTabContent" role="tab" data-toggle="tab">Add league match</a></li>
+    <li role="presentation"><a href="#addFriendlyMatchTabContent" aria-controls="addFriendlyMatchTabContent" role="tab" data-toggle="tab">Add friendly match</a></li>
+    <li role="presentation"><a href="#addAlliedMatchTabContent" aria-controls="addAlliedMatchTabContent" role="tab" data-toggle="tab">Add allied match</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="addLeagueMatchTabContent">
+            <div data-ng-controller="matchController" data-ng-init="" class="col-sm-6">
+            <?php
+                echo $this->form ;
+            ?>
+        </div>
+    </div>
+        <div role="tabpanel" class="tab-pane" id="addFriendlyMatchTabContent"></div>
+        <div role="tabpanel" class="tab-pane" id="addAlliedMatchTabContent"></div>
+  </div>
+</div>
+</div>
+<script src="<?php echo $this->baseUrl('/javascript/controllers/MatchController.js')?>"></script>
